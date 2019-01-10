@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<script src="jquery.min.js"></script>
+		<script language="javascript" src="ssx.js"></script>
+	</head>
+
+	<body>
+
+		<form action="" method="">
+			<fieldset style="padding:5px;">
+				<legend>省市地区联动</legend>
+				出　　 生 　地：
+				<select name="province" id="province"></select>
+				<select name="city" id="city"></select>
+				<select name="area" id="area"></select><br>
+			</fieldset>
+		</form>
+		<script language="javascript" defer>
+			new PCAS("province", "city", "area", "--请选择省份--", "--请选择城市--", "--请选择地区--");
+			var str = "山东省";
+			$.each($("#province>option"),function(i,v){
+				if($(v).val() == str){
+					$(this).click()
+				}
+			})
+		</script>
+		<br>
+	</body>
+
+</html>
