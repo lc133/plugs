@@ -18,9 +18,10 @@
 				<select name="area" id="area"></select><br>
 			</fieldset>
 		</form>
+		<button type="button">带电脑</button>
 		<script language="javascript" defer>
 			new PCAS("province", "city", "area", "--请选择省份--", "--请选择城市--", "--请选择地区--");
-			var str = "山东省";
+			var str = "山西省太原市是小区";
 			$.each($("#province>option"),function(i,v){
 				if($(v).val() == str){
 					$(this).click()

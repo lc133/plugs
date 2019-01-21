@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<script src="../jquery.min.js"></script>
+		<script language="javascript" src="../ssx.js"></script>
+	</head>
+
+	<body>
+		<form action="" method="">
+			<fieldset style="padding:5px;">
+				<legend>省市地区联动</legend> 出　　 生 　地：
+				<select name="province" id="province"></select>
+				<select name="city" id="city"></select>
+				<select name="area" id="area"></select>
+				<br />
+			</fieldset>
+		</form>
+		<span>大萨达所多</span>
+		<script language="javascript" defer="">
+			new PCAS("province", "city", "area", "--请选择省份--", "--请选择城市--", "--请选择地区--");
+
+			//获取一级列表下标
+			function getIndex(str) {
+				if(str.indexOf("区") !== -1) {
+					return str.indexOf("区")
+				} else if(str.indexOf("省") !== -1) {
+					return str.indexOf("省")
+				} else if(str.indexOf("市") !== -1) {
+					return str.indexOf("市")
+				}
+			};
+
+			//回显一二级列表
+			function setDefault(place) {
+				//已找到
+				var arr1 = [],
+					proIndex = getIndex(place),
+					provinceName = place.slice(0, (proIndex + 1)),
+					cityName = place.slice((proIndex + 1), place.length);
+				$("#province option[value='" + provinceName + "']").attr("selected", "selected");
+				//当前一级地名对应的一级列表
+				$.each(PCAN, function(i, v) {
+					if(PCAN[i].split("$")[0] == provinceName) {
+						arr1 = PCAN[i].split("$");
+						return false
+					}
+				});
+				$("#city").empty();
+				//对应的二级列表
+				$.each(arr1[1].split("|"), function(i, v) {
+					if(v.split(",")[0] == cityName) {
+						$("#city").append("<option value='" + v.split(",")[0] + "' selected='selected'>" + v.split(",")[0] + "</option>")
+					} else {
+						$("#city").append("<option value='" + v.split(",")[0] + "'>" + v.split(",")[0] + "</option>")
+					}
+				});
+
+				//检查一二级地名与回显值是否完全匹配
+				if(place.indexOf($("#province").val()) == -1 || place.indexOf($("#city").val()) == -1){
+					//不匹配
+					$("#province").empty();
+					$("#city").empty();
+					new PCAS("province", "city", "area", "--请选择省份--", "--请选择城市--", "--请选择地区--");
+				};
+
+			};
+
+			var str = "吉林省辽源市";
+
+			//设置默认
+			setDefault(str)
+		</script>
+		<br />
+	</body>
+
+</html>
