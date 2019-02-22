@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>宣传视频</title>
+  <!-- <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet"> -->
+  <link href="./video.css" rel="stylesheet">
+  <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+  <!-- <script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script> -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-decoration: none;
+      outline: none;
+    }
+
+    html {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #eeeeee;
+    }
+
+    body {
+      width: 1300px;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      background: #ffffff;
+      width: 90%;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    #my-video {
+      margin-top:50px;
+      width: 995px;
+      height: 558px;
+    }
+
+    #right {
+      width: calc(100% - 1005px);
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      box-sizing: border-box;
+      background: #ffffff;
+    }
+
+    #title {
+      display: block;
+      height: 47px;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      line-height: 47px;
+      color: #333333;
+      font-size: 16px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-indent: 10px;
+      border-bottom: 4px solid #eeeeee;
+      margin-bottom: 15px;
+      z-index: 100;
+    }
+
+    #itemBox {
+      width: 100%;
+      height: auto;
+      margin-top:50px 
+    }
+
+    .item {
+      position: relative;
+      height: 120px;
+      margin-bottom: 15px;
+      cursor: pointer;
+    }
+
+    .pic {
+      width: 100%;
+      height: 100%;
+      line-height: 80px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      position: absolute;
+      top: 0;
+      left: 0;
+      
+    }
+
+    .item:hover .msg{
+      text-decoration: underline
+    }
+
+    .msg {
+      cursor: pointer;
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      color: #ffffff;
+      position: absolute;
+      right: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      bottom: 0;
+      font-size: 13px;
+      background: rgba(0, 0, 0, .5);
+      display: flex;
+      justify-content: top;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .pic1 {
+      background: url(./pic1_p.png) no-repeat center center;
+      background-size: 100% 100%;
+    }
+
+    .pic2 {
+      background: url(./pic2_p.png) no-repeat center center;
+      background-size: 100% 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="title"><b>正在播放：</b>格式工厂格式工厂一分钟了解如何保护臭氧层-中 [DIVX 1080p].mp4</div>
+  <!-- poster="pic2.png" 缩略图 pic1.png/pic2.png-->
+  <video id='my-video' class='video-js' controls preload='auto' data-setup='{}' poster="pic1.png">
+    <source src='../格式工厂格式工厂一分钟了解如何保护臭氧层-中 [DIVX 1080p].mp4' type='video/mp4'>
+  </video>
+  <div id="right">
+    <ul id="itemBox">
+      <!-- 视频列表 -->
+
+      <li class="item" title="点击播放">
+        <div class="pic pic1"></div>
+        <div class="msg">一分钟了解如何保护臭氧层.mp4</div>
+      </li>
+
+      <li class="item" title="点击播放">
+        <div class="pic pic2"></div>
+        <div class="msg">走进臭氧层.mp4</div>
+      </li>
+      
+    </ul>
+  </div>
+  <script src='./video.js'></script>
+  <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+
+  </script>
+</body>
+
+</html>
