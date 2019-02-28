@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>下拉</title>
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+	<style>
+		html,body{
+			overflow: hidden;
+			background: #ffffff
+		}
+	</style>
+</head>
+
+<body>
+	<article class="htmleaf-container">
+		<ul class="cd-accordion-menu animated">
+
+			<!-- 一级菜单 -->
+			<li class="has-children">
+				<input type="checkbox" name="group-1" id="group-1" checked>
+				<label for="group-1">一级1</label>
+				<!-- 二级菜单 -->
+				<ul>
+					<!-- 二级菜单1  -->
+					<li class="has-children">
+						<input type="checkbox" name="sub-group-1" id="sub-group-1">
+						<label for="sub-group-1">一级1 - 二级1</label>
+						<!-- 三级菜单 -->
+						<ul>
+							<li><a href="#0">一级1 - 二级1 - 三级1</a></li>
+							<li><a href="#0">一级1 - 二级1 - 三级2</a></li>
+							<li><a href="#0">一级1 - 二级1 - 三级3</a></li>
+						</ul>
+					</li>
+					<!-- 二级菜单2  -->
+					<li class="has-children">
+						<input type="checkbox" name="sub-group-2" id="sub-group-2">
+						<label for="sub-group-2">一级1 - 二级2</label>
+						<!-- 三级菜单 -->
+						<ul>
+								<li><a href="#0">一级1 - 二级2 - 三级1</a></li>
+								<li><a href="#0">一级1 - 二级2 - 三级2</a></li>
+								<li><a href="#0">一级1 - 二级2 - 三级3</a></li>
+							</ul>
+					</li>
+					<!-- 二级菜单3  -->
+					<li><a href="#0">一级1 - 二级3</a></li>
+					<!-- 二级菜单4  -->
+					<li><a href="#0">一级1 - 二级4</a></li>
+				</ul>
+			</li>
+
+			<!-- 一级菜单 -->
+			<li class="has-children">
+				<input type="checkbox" name="group-2" id="group-2">
+				<label for="group-2">一级2</label>
+				<!-- 二级菜单 -->
+				<ul>
+					<li><a href="#0">一级2 - 二级1</a></li>
+					<li><a href="#0">一级2 - 二级2</a></li>
+				</ul>
+			</li>
+
+		</ul> <!-- cd-accordion-menu -->
+	</article>
+
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/modernizr_main.js"></script> <!-- Resource jQuery -->
+</body>
+
+</html>
